@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b14" />
+  <meta name="description" content="Play a stylish Tic Tac Toe game with friends." />
+  <title>XO Arena — Tic Tac Toe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="XO Arena home">
+        <span class="brand-icon">✳</span>
+        <span>xo<span class="brand-accent">arena</span></span>
+      </a>
+
+      <div class="game-badge">
+        <span class="online-dot"></span>
+        TWO PLAYER MODE
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">THE CLASSIC, REIMAGINED</p>
+      <h1>Make your <span>move.</span></h1>
+      <p class="subtitle">
+        Three in a row. One winner.<br />
+        Endless friendly competition.
+      </p>
+    </section>
+
+    <section class="scoreboard" aria-label="Game scores">
+      <article class="score-card x-card active" id="xCard">
+        <div class="player-symbol x-symbol">X</div>
+        <div class="player-name">PLAYER ONE</div>
+        <div class="player-score" id="scoreX">0</div>
+        <div class="player-caption">Crosses</div>
+      </article>
+
+      <article class="score-card draw-card" id="drawCard">
+        <div class="draw-icon">＝</div>
+        <div class="player-name">DRAWS</div>
+        <div class="player-score" id="scoreDraw">0</div>
+        <div class="player-caption">Tied games</div>
+      </article>
+
+      <article class="score-card o-card" id="oCard">
+        <div class="player-symbol o-symbol">O</div>
+        <div class="player-name">PLAYER TWO</div>
+        <div class="player-score" id="scoreO">0</div>
+        <div class="player-caption">Noughts</div>
+      </article>
+    </section>
+
+    <section class="game-panel" aria-label="Tic Tac Toe game">
+      <div class="game-topline">
+        <div class="round-label">
+          <span class="round-dot"></span>
+          ROUND <span id="roundNumber">01</span>
+        </div>
+
+        <button class="icon-button" id="soundBtn"
+                type="button" aria-pressed="false"
+                aria-label="Enable game sounds" title="Toggle sound">
+          <span id="soundIcon">♪</span>
+        </button>
+      </div>
+
+      <div class="turn-banner" id="turnBanner" aria-live="polite">
+        <span class="turn-symbol x-symbol" id="turnSymbol">X</span>
+        <div class="turn-copy">
+          <span class="turn-title" id="turnTitle">Player One's turn</span>
+          <span class="turn-subtitle" id="turnSubtitle">Choose a square to play</span>
+        </div>
+        <span class="turn-indicator">YOUR MOVE</span>
+      </div>
+
+      <div class="board" id="board"
+           role="group" aria-label="Tic Tac Toe board">
+        <button class="cell" type="button" data-index="0" aria-label="Row 1, column 1, empty"></button>
+        <button class="cell" type="button" data-index="1" aria-label="Row 1, column 2, empty"></button>
+        <button class="cell" type="button" data-index="2" aria-label="Row 1, column 3, empty"></button>
+        <button class="cell" type="button" data-index="3" aria-label="Row 2, column 1, empty"></button>
+        <button class="cell" type="button" data-index="4" aria-label="Row 2, column 2, empty"></button>
+        <button class="cell" type="button" data-index="5" aria-label="Row 2, column 3, empty"></button>
+        <button class="cell" type="button" data-index="6" aria-label="Row 3, column 1, empty"></button>
+        <button class="cell" type="button" data-index="7" aria-label="Row 3, column 2, empty"></button>
+        <button class="cell" type="button" data-index="8" aria-label="Row 3, column 3, empty"></button>
+      </div>
+
+      <div class="game-message" id="gameMessage" aria-live="polite">
+        <span class="message-sparkle">✦</span>
+        Let the battle begin!
+      </div>
+
+      <div class="game-controls">
+        <button class="btn btn-secondary" id="restartBtn" type="button">
+          <span class="btn-icon">↻</span>
+          Restart round
+        </button>
+
+        <button class="btn btn-primary" id="newGameBtn" type="button">
+          <span class="btn-icon">✦</span>
+          New game
+        </button>
+      </div>
+    </section>
+
+    <section class="how-to">
+      <div class="how-icon">ⓘ</div>
+      <div>
+        <h2>How to play</h2>
+        <p>Take turns placing X and O. The first player to align three symbols horizontally, vertically, or diagonally wins.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>✳ XO ARENA</span>
+      <span>Made for the love of play.</span>
+    </footer>
+  </main>
+</body>
+</html>
